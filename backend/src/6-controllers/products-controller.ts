@@ -41,4 +41,20 @@ router.post("/product", async (request:Request, respons:Response, next:NextFunct
     }
 })
 
+//get product by category
+router.get("/products/:categoryId", async (request:Request, respons:Response, next:NextFunction) =>{
+    try {
+        const categoryId = request.params.categoryId
+        const product = await productsLogic.getProductByCategory(categoryId)
+        respons.json(product)
+        
+    } 
+    catch (err) {
+        next(err)        
+    }
+})
+
+
+
+
 export default router

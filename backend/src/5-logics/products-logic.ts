@@ -9,14 +9,19 @@ function getAllCategoty():Promise<ICategotyModel[]>{
     return CategoryModel.find().exec()
 }
 
-function addProduct(product:IProductModel):Promise<IProductModel>{
+function addProduct(product:IProductModel): Promise<IProductModel>{
     const errors = product.validateSync()
     if (errors) throw new ValidateErrorModel (errors.message)
     return product.save()
 }
 
+function getProductByCategory(categoryId:string): Promise<IProductModel[]>{
+    return ProductModel.find({ categoryId }).populate("categories").exec();
+}
+
 export default{
     getAllProduct,
     getAllCategoty,
-    addProduct
+    addProduct,
+    getProductByCategory
 }
