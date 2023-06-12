@@ -54,7 +54,17 @@ router.get("/products/:categoryId", async (request:Request, respons:Response, ne
     }
 })
 
-
-
+//delete product
+router.delete("/product/:_id", async (request: Request, respons: Response, next: NextFunction) =>{
+    try {
+        const _id = request.params._id
+        await productsLogic.deleteProduct(_id)
+        respons.sendStatus(204)        
+    } 
+    catch (err) {
+        next (err)
+        
+    }
+})
 
 export default router

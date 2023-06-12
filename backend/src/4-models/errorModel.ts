@@ -7,7 +7,7 @@ export class RouteNotFoundErrorModel extends ErrorModel{
     } 
 }
 export class ResouceNotFoundErrorModel extends ErrorModel{
-    public constructor(id:number){
+    public constructor(id:string){
         super(404,`the ${id} is not exists`)
     } 
 }
