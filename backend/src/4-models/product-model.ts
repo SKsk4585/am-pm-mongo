@@ -37,7 +37,7 @@ export const ProductSchema = new mongoose.Schema<IProductModel>({
         type:Number,
         required: [true, "price is required"],
         nim:[0, "price can't be negative"],
-        max:[0, "price can't be more than 2000$"],
+        max:[2000, "price can't be more than 2000$"],
 
      
     }
