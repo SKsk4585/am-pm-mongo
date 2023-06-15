@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 import { CategoryModel } from "./category-model";
+
 //1 interface
 export interface IProductModel extends mongoose.Document{
     name:string
-    prduction:Date
+    production:Date
     expire:Date
     categoryId:mongoose.Schema.Types.ObjectId
     price:Number
@@ -18,7 +19,7 @@ export const ProductSchema = new mongoose.Schema<IProductModel>({
         maxlength:[15, "name must be only 15 tharacters"]
     }, 
 
-    prduction:{
+    production:{
         type:Date,
         required:[true, "production date is required"],
     },

@@ -1,0 +1,27 @@
+
+ <div>
+
+
+    <form (ngSubmit)="send()">
+
+        <select [(ngModel)]="newProduct.categoryId" name="categoryId">
+            <option selected>select category</option>
+            <option *ngFor="let c of categorys" value={{c._id}}>{{c.categoryName}}</option>
+        </select>
+
+        <label>NAME</label>
+        <input type="text"[(ngModel)]="newProduct.name" name="name" placeholder="name" required/>
+
+        <label>PRODUCTION</label>
+        <input type="datetime-local" [(ngModel)]="newProduct.production" name="production" placeholder="production" required/>
+
+        <label>EXPIRE</label>
+        <input type="datetime-local" [(ngModel)]="newProduct.expire" name="expire" placeholder="expire" required/>
+
+        <label>PRICE</label>
+        <input type="number"[(ngModel)]="newProduct.price" name="price" placeholder="price">
+
+        <button>ADD</button>
+
+    </form>
+</div> 
