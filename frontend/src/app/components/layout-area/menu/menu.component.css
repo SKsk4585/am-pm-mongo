@@ -1,0 +1,11 @@
+a{
+    font-size: large;
+    display: block;
+    margin-bottom: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+}
+
+a:hover{
+    color: white;
+}

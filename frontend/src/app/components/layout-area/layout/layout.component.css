@@ -1,7 +1,7 @@
 div {
    height: 100%;
    display: grid;
-   grid-template-columns: repeat(1fr,6);
+   grid-template-columns: repeat(6,1fr);
    grid-template-rows: 15% 80% 5%;
    
 }
@@ -13,4 +13,8 @@ header, footer {
 
 main {
     grid-column: span 5;
+}
+
+div >* {
+    border: 2px solid white;
 }

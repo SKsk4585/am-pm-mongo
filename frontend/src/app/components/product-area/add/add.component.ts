@@ -17,7 +17,7 @@ export class AddComponent implements OnInit{
   async ngOnInit(): Promise<void> {
     try {
       this.categorys = await this.productService.getAllCategories()
-      this.router.navigateByUrl("/products")
+      
       
     } 
     catch (err) {
@@ -30,6 +30,7 @@ export class AddComponent implements OnInit{
     try {
       await this.productService.addNewProduct(this.newProduct)
       alert ("The product was successfully added")
+      this.router.navigateByUrl("/products")
             
     } catch (err) {
       console.log (err)
